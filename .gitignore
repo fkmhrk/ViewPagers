@@ -7,3 +7,6 @@ FragmentPager/gen/
 FragmentStatePager/bin/
 FragmentStatePager/gen/
 
+# DetailPager
+DetailPager/bin/
+DetailPager/gen/
