@@ -2,6 +2,7 @@ package jp.fkmsoft.sample.viewpager.detailpager;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,21 @@ public class MainFragment extends Fragment {
         
         return root;
     }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        
+        View root = getView();
+        if (root == null) { return; }
+        ViewPager viewPager = (ViewPager) root.findViewById(R.id.viewpager);
+        PagerAdapter adapter = viewPager.getAdapter();
+        
+        adapter.notifyDataSetChanged();
+//        new NotifyTask(adapter).execute();
+    }
+    
+    
     
     
 }
